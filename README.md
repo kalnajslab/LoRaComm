@@ -1,7 +1,7 @@
-# SerialComm
+# LoRaComm
 
-A simple, robust protocol and class for inter-Arduino UART communication. See examples/SerialComm_Test.ino
-for a test script that exercises functionality.
+A simple, robust protocol and class for inter-Arduino LoRa communication. This is a derivative of Alex's SerComm adapted to run over LoRa radio links:
+https://github.com/dastcvi/SerialComm
 
 The library also provides generic functions for serializing variables onto a uint8_t buffer for use when
 constructing binary messages to send over serial. See examples/Serialize_Test.ino for the test/example.
