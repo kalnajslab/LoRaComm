@@ -3,10 +3,16 @@
 A simple, robust protocol and class for inter-Arduino LoRa communication. This is a derivative of Alex's SerComm adapted to run over LoRa radio links:
 https://github.com/dastcvi/SerialComm
 
+The LoRa interface uses Sandeep Mistry's Arduino-Lora library for the LoRa interface with a small modification for use on Teensy:
+https://github.com/sandeepmistry/arduino-LoRa
+
+In order to interface the LoRa interface wuth SerialComm and intermediate Stream buffer is used: 
+https://github.com/paulo-raca/ArduinoBufferedStreams
+
 The library also provides generic functions for serializing variables onto a uint8_t buffer for use when
 constructing binary messages to send over serial. See examples/Serialize_Test.ino for the test/example.
 
-*Note that checksums are currently unimplemented*
+
 
 ## Message Types
 
