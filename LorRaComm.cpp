@@ -69,7 +69,7 @@ int LoRaComm::RXtoBuff()
   return cnt;
 }
 
-SerialMessage_t LoRaComm::RX()
+LoRaMessage_t LoRaComm::RX()
 {
     ResetRX();
 

@@ -2,12 +2,15 @@
  * LoRaComm.h
  * Author:  Alex St. Clair
  * Created: August 2019
+ * Updated: November 2020
  *
  * This file declares an Arduino library (C++ class) that implements a simple, robust
  * serial (UART) protocol for inter-Arduino messaging.
  *
  * This class doesn't define specific messages, so any project using the protocol must
  * implement message definitions on top of this class.
+ * 
+ * This has been adapted for LoRa messages.  
  */
 
 #ifndef LoRaComm_H
@@ -26,21 +29,21 @@
 
 #define ASCII_BUFFER_SIZE  128
 
-enum SerialMessage_t {
+enum LoRaMessage_t {
     NO_MESSAGE,
     ASCII_MESSAGE,
     ACK_MESSAGE,
     BIN_MESSAGE
 };
 
-struct ASCII_MSG_t {
+struct LoRa_ASCII_MSG_t {
     uint8_t msg_id;
     uint8_t num_params;
     uint8_t buffer_index;
     char buffer[ASCII_BUFFER_SIZE];
 };
 
-struct BIN_MSG_t {
+struct LoRa_BIN_MSG_t {
     uint8_t bin_id;
     uint16_t bin_length;
     uint16_t buffer_size;
@@ -94,12 +97,12 @@ public:
     bool Add_string(const char * buffer);
 
     // ASCII messages with buffers
-    ASCII_MSG_t ascii_rx = {0};
-    ASCII_MSG_t ascii_tx = {0};
+    LoRa_ASCII_MSG_t ascii_rx = {0};
+    LoRa_ASCII_MSG_t ascii_tx = {0};
 
     // Binary messages with buffers
-    BIN_MSG_t binary_rx = {0};
-    BIN_MSG_t binary_tx = {0};
+    LoRa_BIN_MSG_t binary_rx = {0};
+    LoRa_BIN_MSG_t binary_tx = {0};
 
     // Last ACK/NAK
     uint8_t ack_id = 0;
