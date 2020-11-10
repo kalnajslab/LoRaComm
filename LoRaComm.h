@@ -66,7 +66,7 @@ public:
 
     // Receive interface
     int RXtoBuff();
-    SerialMessage_t RX();
+    LoRaMessage_t RX();
 
     // Transmit interface
     int TXfromBuff();
